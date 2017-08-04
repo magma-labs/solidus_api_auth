@@ -5,4 +5,3 @@ class Spree::Api::SocialAuthsController < Spree::Api::BaseController
     puts params
   end
 end
-
