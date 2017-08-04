@@ -26,11 +26,6 @@ require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/authorization_helpers'
 require 'spree/testing_support/url_helpers'
 
-require 'cancan/matchers'
-
-require "spree_virtual_gift_card/factories"
-
-require "capybara/poltergeist"
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, timeout: 120)
 end
