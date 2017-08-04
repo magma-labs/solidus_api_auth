@@ -1,12 +1,8 @@
 Spree::Core::Engine.routes.draw do
   namespace :api do
-    namespace :users do
-      namespace :auth do
-        Spree::SocialConfig.providers.each do |provider, _value|
-          post "/#{provider}", to: "#{provider}#signin"
-          post "/#{provider}", to: "#{provider}#signup"
-        end
-      end
+    Spree::SocialConfig.providers.each do |provider, _value|
+      post "/#{provider}/signin", to: 'socials#signin'
+      post "/#{provider}/signup", to: 'socials#signup'
     end
   end
 end
