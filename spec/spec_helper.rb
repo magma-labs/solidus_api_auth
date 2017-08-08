@@ -57,7 +57,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with :truncation
   end
 
-  config.before :each do |example|
+  config.before :each do
     if RSpec.current_example.metadata[:js]
       page.driver.browser.url_blacklist = ['http://fonts.googleapis.com']
       DatabaseCleaner.strategy = :truncation
